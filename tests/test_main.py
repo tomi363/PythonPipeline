@@ -14,7 +14,7 @@ sys.modules['pyautogui'] = mock.MagicMock()
 sys.modules['mouseinfo'] = mock.MagicMock()
 
 import main
-from pynput.keyboard import KeyCode
+#from pynput.keyboard import KeyCode
 
 
 def test_toggle_spamming():
