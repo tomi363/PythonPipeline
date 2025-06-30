@@ -6,6 +6,7 @@ import random
 
 spamming = False
 
+
 def bow_spam_loop(iterations=None):
     count = 0
     while True:
@@ -25,6 +26,7 @@ def bow_spam_loop(iterations=None):
             if count >= iterations:
                 break
 
+
 def on_press(key):
     global spamming
     try:
@@ -33,6 +35,7 @@ def on_press(key):
             print("Bow spam:", "ON" if spamming else "OFF")
     except AttributeError:
         pass
+
 
 if __name__ == "__main__":
     # Start spam thread running indefinitely
