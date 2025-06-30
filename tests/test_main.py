@@ -2,12 +2,14 @@ import main
 from unittest import mock
 from pynput.keyboard import KeyCode
 
+
 def test_toggle_spamming():
     main.spamming = False
     main.on_press(KeyCode(char='`'))
     assert main.spamming is True
     main.on_press(KeyCode(char='`'))
     assert main.spamming is False
+
 
 def test_bow_spam_loop_spamming_true():
     main.spamming = True
@@ -17,6 +19,7 @@ def test_bow_spam_loop_spamming_true():
         main.bow_spam_loop(iterations=3)
         assert md.call_count == 3
         assert mu.call_count == 3
+
 
 def test_bow_spam_loop_spamming_false():
     main.spamming = False
