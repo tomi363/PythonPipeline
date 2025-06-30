@@ -1,13 +1,17 @@
-# flake8: noqa: E402
 import sys
 import os
+from unittest import mock
 
+# Insert parent directory to sys.path
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 )
 
+# Mock pynput modules before importing main to avoid import errors in CI
+sys.modules['pynput'] = mock.MagicMock()
+sys.modules['pynput.keyboard'] = mock.MagicMock()
+
 import main
-from unittest import mock
 from pynput.keyboard import KeyCode
 
 
