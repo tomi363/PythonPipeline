@@ -7,9 +7,11 @@ sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 )
 
-# Mock pynput modules before importing main to avoid import errors in CI
+# Mock GUI-related modules to prevent errors on headless CI
 sys.modules['pynput'] = mock.MagicMock()
 sys.modules['pynput.keyboard'] = mock.MagicMock()
+sys.modules['pyautogui'] = mock.MagicMock()
+sys.modules['mouseinfo'] = mock.MagicMock()
 
 import main
 from pynput.keyboard import KeyCode
