@@ -19,9 +19,14 @@ from pynput.keyboard import KeyCode
 
 def test_toggle_spamming():
     main.spamming = False
-    main.on_press(KeyCode(char='`'))
+
+    class DummyKey:
+        char = '`'
+
+    main.on_press(DummyKey())
     assert main.spamming is True
-    main.on_press(KeyCode(char='`'))
+
+    main.on_press(DummyKey())
     assert main.spamming is False
 
 
