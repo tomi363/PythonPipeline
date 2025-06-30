@@ -11,8 +11,8 @@ def bow_spam_loop(iterations=None):
     count = 0
     while True:
         if spamming:
-            charge_time = random.uniform(0.005, 0.01)         # Random bow hold (charge) time
-            delay_between_shots = random.uniform(0.005, 0.01) # Random delay between shots
+            charge_time = random.uniform(0.005, 0.01)
+            delay_between_shots = random.uniform(0.005, 0.01)
 
             pyautogui.mouseDown(button='left')  # Hold left-click
             time.sleep(charge_time)              # Simulate charging
