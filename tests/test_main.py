@@ -16,6 +16,7 @@ sys.modules['mouseinfo'] = mock.MagicMock()
 import main
 
 
+
 def test_toggle_spamming():
     main.spamming = False
 
